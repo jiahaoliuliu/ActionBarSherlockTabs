@@ -30,6 +30,20 @@ public class MainActivity extends SherlockFragmentActivity {
 	                this, "tab2", BlackFragment.class));
 	    actionBar.addTab(tab2);
 
+	    // add the first tab which is an instance of TabFragment1
+	    Tab tab3 = actionBar.newTab()
+	              .setText("TabTitle 3")
+	              .setTabListener(new TabListener<WhiteFragment>(
+	               this, "tab3", WhiteFragment.class));
+	    actionBar.addTab(tab3);
+
+	    // add the second tab which is an instance of TabFragment2
+	    Tab tab4 = actionBar.newTab()
+	           .setText("TabTitle 4")
+	           .setTabListener(new TabListener<BlackFragment>(
+	                this, "tab4", BlackFragment.class));
+	    actionBar.addTab(tab4);
+
 	    // check if there is a saved state to select active tab
 	    if( savedInstanceState != null ){
 	      getSupportActionBar().setSelectedNavigationItem(
